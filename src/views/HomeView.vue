@@ -17,7 +17,7 @@
 
     <div class="movies-list">
       <div class="movie" v-for="movie in movies" :key="movie.imdbID" >
-        <router-link :to="'/movie/ + movie.imdbID'" class="movie-link"> 
+        <router-link :to="/movie/ + movie.imdbID" class="movie-link"> 
           <div class="product-image"> 
             <img :src="movie.Poster" alt="Movie Poster" />
             <div class="type"> {{movie.Type}} </div>
@@ -25,7 +25,7 @@
           <div class="detail">
             <p class="year">{{movie.Year}}</p>
             <h3 class="title">{{movie.Title}}</h3>
-            </div>
+          </div>
         </router-link>
       </div>
     </div> 
@@ -180,7 +180,24 @@ export default {
             text-transform: capitalize;
           }
         }
+      
+        .detail {
+          background-color: #496583;
+          padding: 16px 8px; 
+          flex: 1 1 100%;
+          border-radius: 0px 0px 8px 8px; 
+          
+          .year {
+            color: #AAA; 
+            font-size: 14px;
+          }
 
+          h3 {
+            color: #FFF; 
+            font-weight: 900;
+            font-size: 22px; 
+          }
+        }
       }
     }
   }
